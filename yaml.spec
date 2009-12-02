@@ -1,11 +1,11 @@
 %define api 0
-%define	major 1
+%define	major 2
 %define libname	%mklibname %{name} %{api} %{major}
 %define develname %mklibname %{name} -d
 
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
-Version:	0.1.2
+Version:	0.1.3
 Release:	%mkrel 1
 License:	MIT
 Group:		System/Libraries
