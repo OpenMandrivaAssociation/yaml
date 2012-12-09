@@ -1,24 +1,24 @@
 %define api 0
-%define	major 2
-%define libname	%mklibname %{name} %{api} %{major}
+%define major 2
+%define libname %mklibname %{name} %{api} %{major}
 %define develname %mklibname %{name} -d
 
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
-Version:	0.1.3
-Release:	%mkrel 3
+Version:	0.1.4
+Release:	1
 License:	MIT
 Group:		System/Libraries
 URL:		http://pyyaml.org/wiki/LibYAML
-Source0:	http://pyyaml.org/download/libyaml/%name-%version.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source0:	http://pyyaml.org/download/libyaml/%{name}-%{version}.tar.gz
+BuildRequires:	doxygen
 
 %description
 LibYAML is a YAML 1.1 parser and emitter written in C.
 
 %package -n	%{libname}
 Summary:	YAML 1.1 parser and emitter written in C
-Group:          System/Libraries
+Group:		System/Libraries
 
 %description -n	%{libname}
 This package contains the shared libraries for %{name}
@@ -29,8 +29,8 @@ Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
-%description -n	%develname
-This package contains the static %{libname} library and its header
+%description -n	%{develname}
+This package contains the devel %{libname} library and its header
 files.
 
 %prep
@@ -41,27 +41,18 @@ files.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
-
 %files -n %{libname}
-%defattr(-,root,root)
 %doc README
 %{_libdir}/lib*.so.%{major}*
 
-%files -n %develname
-%defattr(-,root,root)
+%files -n %{develname}
 %{_includedir}/*.h
-%{_libdir}/lib*.la
 %{_libdir}/lib*.so
+%{_libdir}/pkgconfig/yaml-0.1.pc
+
+%changelog
+* Sat May 07 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.3-3mdv2011.0
++ Revision: 671940
+- mass rebuild
