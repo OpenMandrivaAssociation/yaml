@@ -37,7 +37,9 @@ files.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x \
+		--disable-static
+
 %make
 
 %install
