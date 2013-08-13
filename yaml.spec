@@ -6,7 +6,7 @@
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
 Version:	0.1.4
-Release:	1
+Release:	2
 License:	MIT
 Group:		System/Libraries
 URL:		http://pyyaml.org/wiki/LibYAML
@@ -37,17 +37,17 @@ files.
 %setup -q
 
 %build
-%configure2_5x --disable-static
+%configure2_5x
 %make
 
 %install
 %makeinstall_std
 
 %files -n %{libname}
-%doc README
 %{_libdir}/lib*.so.%{major}*
 
 %files -n %{develname}
+%doc README
 %{_includedir}/*.h
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/yaml-0.1.pc
