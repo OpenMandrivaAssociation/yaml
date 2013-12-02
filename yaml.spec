@@ -37,6 +37,8 @@ files.
 %setup -q
 
 %build
+libtoolize --copy --force
+autoreconf -fiv
 %configure2_5x \
 		--disable-static
 
