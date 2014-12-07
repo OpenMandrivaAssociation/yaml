@@ -6,7 +6,7 @@
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
 Version:	0.1.6
-Release:	3
+Release:	4
 License:	MIT
 Group:		System/Libraries
 URL:		http://pyyaml.org/wiki/LibYAML
