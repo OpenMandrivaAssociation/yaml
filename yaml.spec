@@ -6,7 +6,7 @@
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
 Version:	0.1.6
-Release:	4
+Release:	5
 License:	MIT
 Group:		System/Libraries
 URL:		http://pyyaml.org/wiki/LibYAML
@@ -39,7 +39,7 @@ files.
 %build
 libtoolize --copy --force
 autoreconf -fiv
-%configure2_5x \
+%configure \
 		--disable-static
 
 %make
@@ -55,8 +55,3 @@ autoreconf -fiv
 %{_includedir}/*.h
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/yaml-0.1.pc
-
-%changelog
-* Sat May 07 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.3-3mdv2011.0
-+ Revision: 671940
-- mass rebuild
