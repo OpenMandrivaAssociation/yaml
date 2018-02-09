@@ -5,8 +5,8 @@
 
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
-Version:	0.1.6
-Release:	6
+Version:	0.1.7
+Release:	1
 License:	MIT
 Group:		System/Libraries
 URL:		http://pyyaml.org/wiki/LibYAML
@@ -16,20 +16,20 @@ BuildRequires:	doxygen
 %description
 LibYAML is a YAML 1.1 parser and emitter written in C.
 
-%package -n	%{libname}
+%package -n %{libname}
 Summary:	YAML 1.1 parser and emitter written in C
 Group:		System/Libraries
 
-%description -n	%{libname}
-This package contains the shared libraries for %{name}
+%description -n %{libname}
+This package contains the shared libraries for %{name}.
 
-%package -n	%develname
+%package -n %{develname}
 Summary:	Development library and header files for the %{name} library
 Group:		Development/C
-Requires:	%{libname} = %{version}-%{release}
-Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Provides:	%{name}-devel = %{EVRD}
 
-%description -n	%{develname}
+%description -n %{develname}
 This package contains the devel %{libname} library and its header
 files.
 
@@ -40,7 +40,7 @@ files.
 libtoolize --copy --force
 autoreconf -fiv
 %configure \
-		--disable-static
+	--disable-static
 
 %make
 
