@@ -5,7 +5,7 @@
 
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
-Version:	0.1.7
+Version:	0.2.1
 Release:	1
 License:	MIT
 Group:		System/Libraries
