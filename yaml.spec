@@ -3,10 +3,13 @@
 %define libname %mklibname %{name} %{api} %{major}
 %define develname %mklibname %{name} -d
 
+# (tpg) optimize it a bit
+%global optflags %{optflags} -O3
+
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
 Version:	0.2.1
-Release:	2
+Release:	3
 License:	MIT
 Group:		System/Libraries
 URL:		http://pyyaml.org/wiki/LibYAML
@@ -34,7 +37,7 @@ This package contains the devel %{libname} library and its header
 files.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 libtoolize --copy --force
@@ -42,10 +45,10 @@ autoreconf -fiv
 %configure \
 	--disable-static
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/lib*.so.%{major}*
