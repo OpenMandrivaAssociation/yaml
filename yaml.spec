@@ -8,8 +8,8 @@
 
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
-Version:	0.2.1
-Release:	3
+Version:	0.2.2
+Release:	1
 License:	MIT
 Group:		System/Libraries
 URL:		http://pyyaml.org/wiki/LibYAML
