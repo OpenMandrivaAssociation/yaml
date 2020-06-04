@@ -8,12 +8,12 @@
 
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
-Version:	0.2.2
+Version:	0.2.5
 Release:	1
 License:	MIT
 Group:		System/Libraries
 URL:		http://pyyaml.org/wiki/LibYAML
-Source0:	http://pyyaml.org/download/libyaml/%{name}-%{version}.tar.gz
+Source0:	https://github.com/yaml/libyaml/archive/%{version}.tar.gz
 BuildRequires:	doxygen
 
 %description
@@ -37,7 +37,7 @@ This package contains the devel %{libname} library and its header
 files.
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n lib%{name}-%{version}
 
 %build
 libtoolize --copy --force
@@ -54,7 +54,6 @@ autoreconf -fiv
 %{_libdir}/lib*.so.%{major}*
 
 %files -n %{develname}
-%doc README
 %{_includedir}/*.h
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/yaml-0.1.pc
