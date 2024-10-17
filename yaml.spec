@@ -12,7 +12,7 @@ Version:	0.2.5
 Release:	2
 License:	MIT
 Group:		System/Libraries
-URL:		http://pyyaml.org/wiki/LibYAML
+URL:		https://pyyaml.org/wiki/LibYAML
 Source0:	https://github.com/yaml/libyaml/archive/%{version}.tar.gz
 BuildRequires:	doxygen
 
