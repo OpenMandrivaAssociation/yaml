@@ -14,6 +14,11 @@ License:	MIT
 Group:		System/Libraries
 URL:		https://pyyaml.org/wiki/LibYAML
 Source0:	https://github.com/yaml/libyaml/archive/%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	doxygen
 
 %description
