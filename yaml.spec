@@ -9,7 +9,7 @@
 Summary:	YAML 1.1 parser and emitter written in C
 Name:		yaml
 Version:	0.2.5
-Release:	2
+Release:	3
 License:	MIT
 Group:		System/Libraries
 URL:		https://pyyaml.org/wiki/LibYAML
@@ -50,10 +50,12 @@ autoreconf -fiv
 %configure \
 	--disable-static
 
-%make_build
+%make_build LIBTOOL=slibtool
 
 %install
-%make_install
+%make_install LIBTOOL=slibtool
+# slibtool also installs an export-symbols archive as .a
+rm -f %{buildroot}%{_libdir}/libyaml.a
 
 %files -n %{libname}
 %{_libdir}/lib*.so.%{major}*
